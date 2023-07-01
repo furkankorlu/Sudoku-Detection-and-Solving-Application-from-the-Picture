@@ -137,3 +137,20 @@ cv.waitKey(250)
 input_size = 48
 rois = kutulara_bol(board)
 rois = np.array(rois).reshape(-1, input_size, input_size, 1)
+
+# Model kutucuğu işler ve sayıyı döndürür
+prediction = model_OCR.predict(rois)
+
+classes = np.arange(0, 10)
+predicted_numbers = []
+
+for i in prediction: 
+    index = (np.argmax(i))
+    predicted_number = classes[index]
+    predicted_numbers.append(predicted_number)
+
+# Alınan 81 sayıyı 9x9'luk matrise dönüştürür 
+board_num = np.array(predicted_numbers).astype('uint8').reshape(9, 9)
+
+print("\nSudoku")
+print(board_num)
