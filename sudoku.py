@@ -154,3 +154,17 @@ board_num = np.array(predicted_numbers).astype('uint8').reshape(9, 9)
 
 print("\nSudoku")
 print(board_num)
+
+# Sudoku çözümünü çağırır
+if sudoku_coz(board_num):
+    print("\nSudoku çözümü:")
+    for i in range(9):
+        for j in range(9):
+            print(board_num[i][j], end=" ")
+        print()
+else:
+    print("Bu Sudoku çözülemez.")
+
+secim = input("\nKapatmak için bir tuşa basın")
+
+secim = exit()
