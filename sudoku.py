@@ -127,3 +127,13 @@ def sayi_uygun(sudoku, hucre, sayi):
 # Görüntü'yü al
 img_name = input("\nİşlemek istediğiniz resmin adını giriniz:")
 img = cv.imread("Sudokular/"+img_name)
+
+# Sudoku'nun bulunduğu alanı bul ve kes
+board, location = alanı_bul(img)
+cv.imshow("Bulunan kutu", board)
+cv.waitKey(250)
+
+# Bulunan alandaki 9x9'luk büyük kutuyu 81 parçaya böl ve yeniden boyutlandır
+input_size = 48
+rois = kutulara_bol(board)
+rois = np.array(rois).reshape(-1, input_size, input_size, 1)
