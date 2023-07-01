@@ -66,3 +66,60 @@ def kutulara_bol(board):
 
     cv.destroyAllWindows()
     return boxes
+
+def sudoku_coz(sudoku):
+    # Tahtanın boş hücrelerini bulma
+    bos_hucre = bul_bos_hucre(sudoku)
+
+    # Eğer boş hücre kalmadıysa Sudoku tamamlandı demektir
+    if not bos_hucre:
+        return True
+
+    # Boş hücreleri doldurma denemeleri
+    for sayi in range(1, 10):
+        # Eğer sayı, boş hücreye yerleştirilebilirse
+        if sayi_uygun(sudoku, bos_hucre, sayi):
+            # Sayıyı yerleştir
+            sudoku[bos_hucre[0]][bos_hucre[1]] = sayi
+
+            # Sudoku çözümünü tekrar çağır
+            if sudoku_coz(sudoku):
+                return True
+
+            # Yanlış bir yerleştirme yapıldıysa geri al
+            sudoku[bos_hucre[0]][bos_hucre[1]] = 0
+
+    # Sudoku çözülemedi
+    return False
+
+
+def bul_bos_hucre(sudoku):
+    # Boş hücreleri bulma
+    for i in range(9):
+        for j in range(9):
+            if sudoku[i][j] == 0:
+                return (i, j)
+    return None
+
+
+def sayi_uygun(sudoku, hucre, sayi):
+    # Satırda sayı kontrolü
+    for i in range(9):
+        if sudoku[hucre[0]][i] == sayi:
+            return False
+
+    # Sütunda sayı kontrolü
+    for i in range(9):
+        if sudoku[i][hucre[1]] == sayi:
+            return False
+
+    # 3x3 kutuda sayı kontrolü
+    baslangic_satir = (hucre[0] // 3) * 3
+    baslangic_sutun = (hucre[1] // 3) * 3
+    for i in range(3):
+        for j in range(3):
+            if sudoku[baslangic_satir + i][baslangic_sutun + j] == sayi:
+                return False
+
+    # Sayı uygun
+    return True
