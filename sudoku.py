@@ -123,3 +123,7 @@ def sayi_uygun(sudoku, hucre, sayi):
 
     # Sayı uygun
     return True
+
+# Görüntü'yü al
+img_name = input("\nİşlemek istediğiniz resmin adını giriniz:")
+img = cv.imread("Sudokular/"+img_name)
