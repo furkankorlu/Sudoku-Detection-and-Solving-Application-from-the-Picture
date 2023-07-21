@@ -53,21 +53,23 @@ In order fort he contour finding algorithm to work in a healthy way, the photo m
 - I found the contours of the Sudoku board using the contouring algorithms on the image. Because I want it to be an example, I drew the contours I found using OpenCV’s *drawContours* function. By analyzing the contours I found, I detected contours in the form of a square. By analyzing the areas of the square I detected, I found the pixel position of the large Sudoku board in the photo. Since the pictures of different resolutions had to be processed, I obtained the position of the Sudoku board with the **perspektif_al** function, cut it and resized it.
 
 
-![2](https://github.com/furkankorlu/Sudoku-Detection-and-Solving-Application-from-the-Picture/assets/122547302/fbaf6e22-9599-44a8-9743-663f67ee2651)
+![2](https://github.com/furkankorlu/Sudoku-Detection-and-Solving-Application-from-the-Picture/assets/122547302/49506601-71d8-4dca-82e9-d7d7567578b7)
 
 
 - By processing the resulting large Sudoku board with the **kutulara_bol** fonction, I parsed each box. I reflected the 81 boxes I obtained, starting from the upper left row and column, to the screen. I sent it to the model to make OCR in the order I gave it to the screen. 
 
-![3](https://github.com/furkankorlu/Sudoku-Detection-and-Solving-Application-from-the-Picture/assets/122547302/2b7d6aa2-f584-48c9-9996-c4c98539c4ba)
+![3](https://github.com/furkankorlu/Sudoku-Detection-and-Solving-Application-from-the-Picture/assets/122547302/89d511ff-6b24-4e59-82da-cfe4a668ac51)
 
 ### <font color="HoneyDew">**c-) OCR**</font>
-- Optical Character Recognition (OCR) modules are basically Technologies used to convert written text into digital format. I used the *TensorFlow* based *OCR* modüle in my project. This module is a trained model to automatically recognize numbers in written or printed texts. With the order I mentioned earlier, I analyzed the incoming boxes using a model that was only trained to detect numbers. I recognized the numbers and added the results I got to the list called **prediced_numbers**. Throughput;
+- Optical Character Recognition (OCR) modules are basically Technologies used to convert written text into digital format. I used the *TensorFlow* based *OCR* modüle in my project. This module is a trained model to automatically recognize numbers in written or printed texts. With the order I mentioned earlier, I analyzed the incoming boxes using a model that was only trained to detect numbers. I recognized the numbers and added the results I got to the list called **prediced_numbers**. Output;
+  
+![4](https://github.com/furkankorlu/Sudoku-Detection-and-Solving-Application-from-the-Picture/assets/122547302/00f94819-e4df-4b76-9f1a-05b617ce20cc)
 
-![4](https://github.com/furkankorlu/Sudoku-Detection-and-Solving-Application-from-the-Picture/assets/122547302/99b58170-8800-4b71-818d-e0371062e943)
 
 - In the list called **predicted_numbers**, I turned the numbers that stand with the order I mentioned above into a 2- dimensional 9*9 size list with Numpy. 
 
-![5](https://github.com/furkankorlu/Sudoku-Detection-and-Solving-Application-from-the-Picture/assets/122547302/30d30bcc-6e64-4cf3-a966-826b4a6c95ce)
+![5](https://github.com/furkankorlu/Sudoku-Detection-and-Solving-Application-from-the-Picture/assets/122547302/141aa322-8920-4903-b386-4190281490d1)
+
 
 ## <font color="HoneyDew">**2-) SOLVING**</font>
 - The Sudoku solution algorithm solves the Sudoku puzzel by placing the appropriate numbers in place of the spaces on the board.
@@ -83,7 +85,7 @@ In order fort he contour finding algorithm to work in a healthy way, the photo m
 
 - If all empty cells are filled, Sudoku is considered complete and True is returned. As a result of the arrival of True, the algorithm is terminated and the solution of the Sudoku board is offered. 
 
-![6](https://github.com/furkankorlu/Sudoku-Detection-and-Solving-Application-from-the-Picture/assets/122547302/78e1bac4-2c87-476a-962d-c63f84247b23)
+![6](https://github.com/furkankorlu/Sudoku-Detection-and-Solving-Application-from-the-Picture/assets/122547302/032ae526-0a0d-46f6-9585-c7edfdfa5138)
 
 # <font color="azure"><div align="center"><p>**Resimden Sudoku Algılama ve Çözme Uygulaması**</p> </div></font>
 
@@ -132,17 +134,17 @@ Kontur bulma algoritmasının sağlıklı bir şekilde çalışabilmesi için fo
 
 - **Kontrast Geliştirme:** Resmin kontrastını artırmak için histogram eşitleme ve kontrast geliştirme teknikleri uygulanır.
 
-![1](https://github.com/furkankorlu/Sudoku-Detection-and-Solving-Application-from-the-Picture/assets/122547302/d125a936-5650-450c-8ba2-70e44f20f771)
+![1](https://github.com/furkankorlu/Sudoku-Detection-and-Solving-Application-from-the-Picture/assets/122547302/361c329d-da15-40f3-a106-904333ae4da2)
 
 #### <font color="HoneyDew">**b-) KONTUR BULMA**</font>
 
 - Görüntü üzerinde kontur bulma algoritmaları kullanarak Sudoku tahtasının konturları buldum. Örnek niteliği taşıması istediğimden bulduğum konturları OpenCV nin *drawContours* fonksiyonu aracılığıyla çizdim. Bulduğum konturları analiz ederek Dörtgen biçiminde olan konturları tespit ettim. Tespit ettiğim Dörtgenlerin alanlarını analiz ederek büyük Sudoku tahtasının fotoğraftaki piksel konumunu buldum. Farklı çözünürlükteki resimler işlenmesi gerektiğinden **perspektif_al** fonksiyonu ile Sudoku tahtasının konumunu elde ettim, kestim ve yeniden boyutlandırarak işledim.
 
-![2](https://github.com/furkankorlu/Sudoku-Detection-and-Solving-Application-from-the-Picture/assets/122547302/fbaf6e22-9599-44a8-9743-663f67ee2651)
+![2](https://github.com/furkankorlu/Sudoku-Detection-and-Solving-Application-from-the-Picture/assets/122547302/49506601-71d8-4dca-82e9-d7d7567578b7)
 
 - Elde edilen büyük Sudoku tahtasını **kutulara_bol** fonksiyonu ile işleyerek,  her bir kutuyu ayrıştırdım. Elde ettiğim 81 adet kutuyu sol en üst satır ve sütundan başlayarak ekrana çıktı olarak verdim. Ekrana verdiğim sıra ile de OCR yapılması için modele gönderdim.
 
-![3](https://github.com/furkankorlu/Sudoku-Detection-and-Solving-Application-from-the-Picture/assets/122547302/2b7d6aa2-f584-48c9-9996-c4c98539c4ba)
+![3](https://github.com/furkankorlu/Sudoku-Detection-and-Solving-Application-from-the-Picture/assets/122547302/89d511ff-6b24-4e59-82da-cfe4a668ac51)
 
 #### <font color="HoneyDew">**c-) OCR**</font>
 
@@ -152,11 +154,13 @@ Kontur bulma algoritmasının sağlıklı bir şekilde çalışabilmesi için fo
 
 - Sayıları tanıdı ve aldığım sonuçları **predicted_numbers** adlı listeye ekledim. Çıktısı;
 
-![4](https://github.com/furkankorlu/Sudoku-Detection-and-Solving-Application-from-the-Picture/assets/122547302/99b58170-8800-4b71-818d-e0371062e943)
+
+![4](https://github.com/furkankorlu/Sudoku-Detection-and-Solving-Application-from-the-Picture/assets/122547302/00f94819-e4df-4b76-9f1a-05b617ce20cc)
+
 
 - **predicted_numbers** adlı listede yukarda bahsettiğim sıra ile duran sayıları Numpy ile 2 boyutlu 9x9 boyutunda bir listeye dönüştürdüm.
 
-![5](https://github.com/furkankorlu/Sudoku-Detection-and-Solving-Application-from-the-Picture/assets/122547302/30d30bcc-6e64-4cf3-a966-826b4a6c95ce)
+![5](https://github.com/furkankorlu/Sudoku-Detection-and-Solving-Application-from-the-Picture/assets/122547302/141aa322-8920-4903-b386-4190281490d1)
 
 ### <font color="HoneyDew">**2-) ÇÖZME**</font>
 
@@ -173,5 +177,5 @@ Kontur bulma algoritmasının sağlıklı bir şekilde çalışabilmesi için fo
 
 - Eğer tüm boş hücreler doldurulmuşsa Sudoku tamamlanmış olarak kabul edilerek **True** döndürülür. **True** gelmesi sonucu algoritma sonlandırılır ve Sudoku tahtası çözümü sunulur.
 
-![6](https://github.com/furkankorlu/Sudoku-Detection-and-Solving-Application-from-the-Picture/assets/122547302/78e1bac4-2c87-476a-962d-c63f84247b23)
+![6](https://github.com/furkankorlu/Sudoku-Detection-and-Solving-Application-from-the-Picture/assets/122547302/032ae526-0a0d-46f6-9585-c7edfdfa5138)
 
