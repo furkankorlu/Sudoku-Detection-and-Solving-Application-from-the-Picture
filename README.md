@@ -45,7 +45,8 @@ In order fort he contour finding algorithm to work in a healthy way, the photo m
 
 - **Contrast Development:** Histogram equalization and contrast enhancement techniques are applied to increase the contrast of the Picture. 
 
-![1](https://github.com/furkankorlu/Sudoku-Detection-and-Solving-Application-from-the-Picture/assets/122547302/d125a936-5650-450c-8ba2-70e44f20f771)
+
+![1](https://github.com/furkankorlu/Sudoku-Detection-and-Solving-Application-from-the-Picture/assets/122547302/361c329d-da15-40f3-a106-904333ae4da2)
 
 ### <font color="HoneyDew">**b-) FIND CONTOUR**</font>
 
