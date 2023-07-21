@@ -125,8 +125,8 @@ def sayi_uygun(sudoku, hucre, sayi):
     return True
 
 # Görüntü'yü al
-img_name = input("\nİşlemek istediğiniz resmin adını giriniz:")
-img = cv.imread("Sudokular/"+img_name)
+img_name = input("\nEnter the name of the sudoku picture:")
+img = cv.imread("Sudoku/"+img_name)
 
 # Sudoku'nun bulunduğu alanı bul ve kes
 board, location = alanı_bul(img)
@@ -152,19 +152,19 @@ for i in prediction:
 # Alınan 81 sayıyı 9x9'luk matrise dönüştürür 
 board_num = np.array(predicted_numbers).astype('uint8').reshape(9, 9)
 
-print("\nSudoku")
+print("\nSudoku:")
 print(board_num)
 
 # Sudoku çözümünü çağırır
 if sudoku_coz(board_num):
-    print("\nSudoku çözümü:")
+    print("\nSudoku çözümü:\nSudoku answer:")
     for i in range(9):
         for j in range(9):
             print(board_num[i][j], end=" ")
         print()
 else:
-    print("Bu Sudoku çözülemez.")
+    print("Bu Sudoku çözülemez.\nThis sudoku can't be solved")
 
-secim = input("\nKapatmak için bir tuşa basın")
+secim = input("\nKapatmak için bir tuşa basın\nPress a key to close the app")
 
 secim = exit()
